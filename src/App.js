@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
 
 function App() {
+  const [dropdown, setDropdown]=useState(false);
+
+  const abrircerrarDropdown=()=>{
+    setDropdown(!dropdown);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App position-absolute top-0 start-0 m-3">
+    <Dropdown isOpen={dropdown} toggle={abrircerrarDropdown} direction="right">
+      <DropdownToggle caret>
+        soy un Dropdown
+      </DropdownToggle>
+
+      <DropdownMenu>
+        <DropdownItem>accion 1</DropdownItem>
+        <DropdownItem>accion 2</DropdownItem>
+        <DropdownItem>accion 3</DropdownItem>
+        <DropdownItem>accion 4</DropdownItem>
+      </DropdownMenu>
+
+    </Dropdown>
     </div>
   );
 }
