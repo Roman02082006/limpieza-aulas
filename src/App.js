@@ -1,33 +1,31 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { FaEllipsisV } from 'react-icons/fa';
 
 function App() {
-  const [dropdown, setDropdown]=useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const abrircerrarDropdown=()=>{
-    setDropdown(!dropdown);
-  }
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   return (
-    <div className="App position-absolute top-0 start-0 m-3">
-    <Dropdown isOpen={dropdown} toggle={abrircerrarDropdown} direction="right">
-      <DropdownToggle caret>
-        soy un Dropdown
-      </DropdownToggle>
-
-      <DropdownMenu>
-        <DropdownItem>accion 1</DropdownItem>
-        <DropdownItem>accion 2</DropdownItem>
-        <DropdownItem>accion 3</DropdownItem>
-        <DropdownItem>accion 4</DropdownItem>
-      </DropdownMenu>
-
-    </Dropdown>
+    <div className="App">
+      <div className="dropdown-container">
+        <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} direction="down">
+          <DropdownToggle caret={false} className="custom-toggle">
+            <FaEllipsisV size={20} />
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>Acción 1</DropdownItem>
+            <DropdownItem>Acción 2</DropdownItem>
+            <DropdownItem>Acción 3</DropdownItem>
+            <DropdownItem>Acción 4</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </div>
     </div>
   );
-  
 }
 
 export default App;
