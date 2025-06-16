@@ -44,7 +44,7 @@
   border-color: #ffffff;
 }
 .sidebar{
-  width: 60;
+  width: 60px;
   transition: width 0.3s;
   background-color: #0d4a5f;
   height: 100vh;
@@ -74,6 +74,7 @@
 
 .icon-square,.icon-circle,.icon-hex {
   background-color: #ccc;
+  margin-top: 80px;
 }
 
 .icon-square {
@@ -124,26 +125,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 60px;
 }
 
-.theme-switcher .circle {
+.circle-white,.circle-dark{
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 .circle-white {
   background-color: #fff;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
 }
 
 .circle-dark{
   background-color: #355e70;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
 }
 
 .card{
@@ -177,4 +176,7 @@
   border: none !important;
   box-shadow: none !important;
   color: white;
+}
+.menu-icon,.custom-toggle{
+  cursor: pointer;
 }

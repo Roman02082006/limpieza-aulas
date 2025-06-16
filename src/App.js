@@ -13,11 +13,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className={`sidebar ${sidebarOpen ? 'open' : ""}`}>
+      <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+          
           <div className="menu-icon" onClick={toggleSidebar}>
-          <div className="bar"/>
-          <div className="bar"/>
-          <div className="bar"/>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
           
         </div>
       <div className="menu-items"> 
@@ -36,11 +37,11 @@ function App() {
       </div>
 
       <div className="main-content">
+      <div className="header">
       <span>Pagina Principal Del Administrador</span> 
-        <div className="header">
-        <div className="icon-circle">
-        <div className="circle-white"/>
-        <div className="circle-dark"/>
+        <div className="theme-switcher">
+        <div className="circle-white"></div>
+        <div className="circle-dark"></div>
 
          <div className="dropdown-container">
         <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} direction="down">
@@ -72,13 +73,10 @@ function App() {
 
           </div>
         </div>
+        </div>
 
-
-  
-
-  
     </div>
-  </div>
+
   );
 }
 
