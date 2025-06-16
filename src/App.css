@@ -27,6 +27,8 @@
   right: 0;
   background-color: #829db3;
   border-radius: 50%;
+  border: 1px solid;
+  border-color: #ffffff;
 }
 
 .circulo2 {
@@ -39,4 +41,6 @@
   right: 0;
   background-color: #214868;
   border-radius: 50%;
+  border: 1px solid;
+  border-color: #ffffff;
 }
