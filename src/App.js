@@ -23,6 +23,12 @@ function App() {
             <DropdownItem>Acción 4</DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <div className="circulo">
+          
+          </div>;
+          <div className="circulo2">
+          
+          </div>;
       </div>
     </div>
   );
