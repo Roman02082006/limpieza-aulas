@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './Componentes/Página_Usuario.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FaEllipsisV } from 'react-icons/fa';
