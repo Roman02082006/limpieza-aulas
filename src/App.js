@@ -1,83 +1,56 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { FaEllipsisV } from 'react-icons/fa';
 
-function App() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState (false);
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+import LoginAdmin from './Componentes/Login_Admin.js';
+import LoginUser from './Componentes/Login_Usuario.js';
+
+
+const Home = () => {
+  const navigate = useNavigate();
 
   return (
-    <div className="App">
-      <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-          
-          <div className="menu-icon" onClick={toggleSidebar}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          
-        </div>
-      <div className="menu-items"> 
-        <div className="icon-square"/>
-        <div className="icon-square"/>
-        <div className="icon-circle"/>
+    <div className="container">
       
+      <button className="button-classroom" onClick={() => navigate('src/Login_Admin.js')}>
+        <div className="logo-wrapper">
+          <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
+            <circle cx="12" cy="10" r="3" fill="white"/>
+            <rect x="6" y="15" width="12" height="2" fill="white"/>
+          </svg>
+          <svg className="crown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <path fill="gold" d="M8 24L24 8l8 16 8-16 16 16-8 24H16z"/>
+          </svg>
         </div>
-        
-        <div className="bottom-section">
-        <div className="icon-circle"/>
-        <div className="input-placeholder"/>
-        <div className="icon-hex"/>
+      </button>
 
+      {/* Botón Usuario */}
+      <button className="button-classroom" onClick={() => navigate("src/Login_Usuario.js")}>
+        <div className="logo-wrapper">
+          <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
+            <circle cx="12" cy="10" r="3" fill="white"/>
+            <rect x="6" y="15" width="12" height="2" fill="white"/>
+          </svg>
         </div>
-      </div>
-
-      <div className="main-content">
-      <div className="header">
-      <span>Pagina Principal Del Administrador</span> 
-        <div className="theme-switcher">
-        <div className="circle-white"></div>
-        <div className="circle-dark"></div>
-
-         <div className="dropdown-container">
-        <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} direction="down">
-          <DropdownToggle caret={false} className="custom-toggle">
-            <FaEllipsisV size={20} />
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem>Acción 1</DropdownItem>
-            <DropdownItem>Acción 2</DropdownItem>
-            <DropdownItem>Acción 3</DropdownItem>
-            <DropdownItem>Acción 4</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        </div>
-
-
-        </div>
-      </div>
-        <div className="card">
-          <div className="card-header">
-            <div className="icon-circle"/>
-            <div className="icon-square"/>
-            <div className="icon-square"/>
-          </div>
-          <div className="card-body">
-            <div className="line"/>
-            <div className="line"/>
-            <div className="line"/>
-
-          </div>
-        </div>
-        </div>
-
+      </button>
     </div>
-
   );
-}
+};
+
+// Componente principal con rutas
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login-admin" element={<LoginAdmin />} />
+        <Route path="/login-user" element={<LoginUser />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;
