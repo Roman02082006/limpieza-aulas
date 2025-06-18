@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import './App.css';
 
 
-import LoginAdmin from './Componentes/Login_Admin.js';
-import LoginUser from './Componentes/Login_Usuario.js';
+import Login_Admin from './Componentes/Login_Admin';
+import Login_Usuario from './Componentes/Login_Usuario';
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="container">
       
-      <button className="button-classroom" onClick={() => navigate('src/Login_Admin.js')}>
+      <button className="button-classroom" onClick={() => navigate('src/Componentes/Login_Admin.js')}>
         <div className="logo-wrapper">
           <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
@@ -26,8 +26,8 @@ const Home = () => {
         </div>
       </button>
 
-      {/* Botón Usuario */}
-      <button className="button-classroom" onClick={() => navigate("src/Login_Usuario.js")}>
+      
+      <button className="button-classroom" onClick={() => navigate("src/Componentes/Login_Usuario.js")}>
         <div className="logo-wrapper">
           <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
@@ -40,14 +40,13 @@ const Home = () => {
   );
 };
 
-// Componente principal con rutas
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login-admin" element={<LoginAdmin />} />
-        <Route path="/login-user" element={<LoginUser />} />
+        <Route path="/Login_Admin" element={<Login_Admin />} />
+        <Route path="/Login_Usuario" element={<Login_Usuario />} />
       </Routes>
     </Router>
   );
