@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,7 +22,7 @@
 
     <div class="campo">
       <label for="Contraseña">Contraseña</label>
-      <textarea id="contraseña" name="contraseña" rows="0" required></textarea>
+      <textarea id="contraseña" name="contraseña" rows="0" required> </textarea>
     </div>
     <button type="submit">Enviar</button>
   </form>
