@@ -1,30 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <link rel="stylesheet" href="Login_Usuario.css" type="text/css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulario de registro</title>
-  <link rel="stylesheet" href="estilos.css" />
-</head>
-<body>
-  <form class="formulario" action="/submit" method="POST">
-    <h2>Registro</h2>
-    <div class="campo">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required />
-    </div>
+import React from 'react';
+import './Login_Usuario.css';
 
-    <div class="campo">
-      <label for="email">Correo Electrónico:</label>
-      <input type="email" id="email" name="email" required />
-    </div>
+function LoginUsuario() {
+  return (
+    <div className="login-container">
+      <h1>Iniciar Sesión</h1>
+      <form>
+        <div className="form-group">
+          <label htmlFor="usuario">Usuario</label>
+          <input type="text" id="usuario" placeholder="Ingrese su usuario" />
+        </div>
 
-    <div class="campo">
-      <label for="Contraseña">Contraseña</label>
-      <textarea id="contraseña" name="contraseña" rows="0" required> </textarea>
+        <div className="form-group">
+          <label htmlFor="password">Contraseña</label>
+          <input type="password" id="password" placeholder="Ingrese su contraseña" />
+        </div>
+
+        <button type="submit">Ingresar</button>
+      </form>
     </div>
-    <button type="submit">Enviar</button>
-  </form>
-</body>
-</html>
+  );
+}
+
+export default LoginUsuario;
