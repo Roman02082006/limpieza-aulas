@@ -1,8 +1,13 @@
 export default function LoginAdmin() {
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      alert("Formulario enviado correctamente");
+    };
+  
     return (
-      <div>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
         <h2>Login Administrador</h2>
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleSubmit} style={{ display: "inline-block", textAlign: "left" }}>
           <label htmlFor="email">Correo Gmail:</label>
           <br />
           <input type="email" id="email" name="email" required />
