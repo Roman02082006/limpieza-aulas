@@ -84,7 +84,7 @@ button{
   padding: 0.8rem;
   border: none;
   border-radius: 10px;
-  background: linear linear-gradient(90deg,red,green,blue);
+  background: linear-gradient(90deg,red,green,blue);
   background-size: 300px 300px;
   color: white;
   font-weight: bold;
@@ -104,7 +104,7 @@ button{
   box-shadow: 0 0 20px blue, 0 0 40px red,0 0 60px green;
 }
 
-0%{
+100%{
   background-position: 0% 50%;
   box-shadow: 0 0 10px green, 0 0 20px blue,0 0 40px red;
 }
