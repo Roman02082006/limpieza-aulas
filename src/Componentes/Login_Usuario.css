@@ -46,7 +46,7 @@ opacity: 0.8;
 
 }
 
-form {
+.login-container form {
   position: relative;
   z-index: 2;
   background: rgba(0, 0, 0, 0.85);
@@ -58,18 +58,18 @@ form {
   backdrop-filter: blur(5px);
 
 }
-.form-group{
+.login-container .form-group{
   margin-bottom: 1.5rem;
 }
 
-label{
+.login-container label{
   display: block;
   margin-bottom: 0.5rem;
   color: #ccc;
 
 }
 
-input{
+.login-container input{
   width: 100%;
   padding: 0.7rem;
   border-radius: 10px;
@@ -79,7 +79,7 @@ input{
   color: #fff;
 }
 
-button{
+.login-container button{
   width: 100%;
   padding: 0.8rem;
   border: none;

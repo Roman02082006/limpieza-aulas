@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
-import './Componentes/Login_Admin.css';
-import './Componentes/Login_Usuario.css';
 
 import Login_Admin from './Componentes/Login_Admin';
 import Login_Usuario from './Componentes/Login_Usuario';

@@ -1,0 +1,111 @@
+.login-container-admin{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+}
+
+.login-container-admin::before{
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:black
+  radial-gradient(circle at 20% 30%,red,transparent 40%),
+  radial-gradient(circle at 20% 30%,blue,transparent 40%),
+  radial-gradient(circle at 20% 30%,lime,transparent 40%),
+  radial-gradient(circle at 20% 30%,magenta,transparent 40%),
+  radial-gradient(circle at 20% 30%,cyan,transparent 40%),
+  radial-gradient(circle at 20% 30%,yellow,transparent 40%);
+filter: blur(100px);
+animation: moveRGB 20s infinite alternate ease-in-out;
+z-index: 0;
+opacity: 0.8;
+}
+@keyframes moveRGB {
+
+0%{
+  transform: translate(0,0) rotate(0deg);
+  filter: blur(120px) brightness(1.2);
+}
+50%{
+  transform: translate(5%,-5%) rotate(180deg);
+  filter: blur(120px) brightness(1.5);
+}
+100%{
+  transform: translate(0,0) rotate(360deg);
+  filter: blur(100px) brightness(1.2);
+}
+
+}
+
+.login-container-admin form {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255,255,255,01);
+  color: #fff;
+  min-width: 320px;
+  backdrop-filter: blur(5px);
+
+}
+.login-container-admin .form-group{
+  margin-bottom: 1.5rem;
+}
+
+.login-container-admin label{
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+
+}
+
+.login-container-admin input{
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.login-container-admin button{
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg,red,green,blue);
+  background-size: 300px 300px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  animation: rgbButton 6s infinite alternate ease-in-out;
+}
+
+@keyframes rgbButton {
+
+0%{
+  background-position: 0% 50%;
+  box-shadow: 0 0 10px red, 0 0 20px green,0 0 40px blue;
+}
+
+50%{
+  background-position: 100% 50%;
+  box-shadow: 0 0 20px blue, 0 0 40px red,0 0 60px green;
+}
+
+100%{
+  background-position: 0% 50%;
+  box-shadow: 0 0 10px green, 0 0 20px blue,0 0 40px red;
+}
+}
