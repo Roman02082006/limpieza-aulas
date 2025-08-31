@@ -17,7 +17,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background:black
+  background:
   radial-gradient(circle at 20% 30%,red,transparent 40%),
   radial-gradient(circle at 20% 30%,blue,transparent 40%),
   radial-gradient(circle at 20% 30%,lime,transparent 40%),

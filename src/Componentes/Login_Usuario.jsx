@@ -22,6 +22,18 @@ export default function LoginForm() {
 
   return (
     <div className="login-container">
+      {[...Array(15)].map((_,i) => (
+        <span
+        key={i}
+        style={{
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
+          animationDuration: `${Math.random() * 10}s`
+        }}
+        />
+      ))}
+
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-2xl shadow-md w-80"

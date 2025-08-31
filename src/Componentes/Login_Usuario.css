@@ -10,41 +10,7 @@
 
 }
 
-.login-container::before{
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-  radial-gradient(circle at 20% 30%,red,transparent 40%),
-  radial-gradient(circle at 20% 30%,blue,transparent 40%),
-  radial-gradient(circle at 20% 30%,lime,transparent 40%),
-  radial-gradient(circle at 20% 30%,magenta,transparent 40%),
-  radial-gradient(circle at 20% 30%,cyan,transparent 40%),
-  radial-gradient(circle at 20% 30%,yellow,transparent 40%);
-filter: blur(100px);
-animation: moveRGB 20s infinite alternate ease-in-out;
-z-index: 0;
-opacity: 0.8;
-}
-@keyframes moveRGB {
 
-0%{
-  transform: translate(0,0) rotate(0deg);
-  filter: blur(120px) brightness(1.2);
-}
-50%{
-  transform: translate(5%,-5%) rotate(180deg);
-  filter: blur(120px) brightness(1.5);
-}
-100%{
-  transform: translate(0,0) rotate(360deg);
-  filter: blur(100px) brightness(1.2);
-}
-
-}
 
 .login-container form {
   position: relative;
@@ -52,7 +18,7 @@ opacity: 0.8;
   background: rgba(0, 0, 0, 0.85);
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(255,255,255,01);
+  box-shadow: 0 0 30px rgba(255,255,255,0.1);
   color: #fff;
   min-width: 320px;
   backdrop-filter: blur(5px);
@@ -84,28 +50,50 @@ opacity: 0.8;
   padding: 0.8rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(90deg,red,green,blue);
-  background-size: 300px 300px;
+  background: #1a73e8;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  animation: rgbButton 6s infinite alternate ease-in-out;
+  transition: background 0.3s ease;
 }
 
-@keyframes rgbButton {
-
-0%{
-  background-position: 0% 50%;
-  box-shadow: 0 0 10px red, 0 0 20px green,0 0 40px blue;
+.login-container button:hover{
+  background: #1669c1;
 }
 
-50%{
-  background-position: 100% 50%;
-  box-shadow: 0 0 20px blue, 0 0 40px red,0 0 60px green;
+.login-container span{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.8;
+  animation: move 20s linear infinite, blink 2s ease-in-out infinite;
 }
 
-100%{
-  background-position: 0% 50%;
-  box-shadow: 0 0 10px green, 0 0 20px blue,0 0 40px red;
+@keyframes move{
+  0%{
+    transform: translate(0, 0);
+  }
+
+  25%{
+      transform: translate(50px,100px);
+  }
+
+  50%{
+    transform: translate(-100px,200px);
+  }
+
+  75%{
+    transform: translate(150px,50px);
+  }
+
+  100%{
+    transform: translate(0,0)
+  }
 }
+
+@keyframes blink  {
+  0%, 100% {opacity: 0.2;}
+  50% {opacity: 1;}
 }
