@@ -4,6 +4,8 @@ import './App.css';
 
 import Login_Admin from './Componentes/Login_Admin';
 import Login_Usuario from './Componentes/Login_Usuario';
+import Registro_Admin from './Componentes/Registro_Admin';
+import Registro_Usuario from './Componentes/Registro_Usuario';
 
 
 const Home = () => {
@@ -12,7 +14,7 @@ const Home = () => {
   return (
     <div className="container">
       
-      <button className="button-classroom" onClick={() => navigate("/Login_Admin")}>
+      <button className="button-classroom" onClick={() => navigate("/Registro_Admin")}>
         <div className="logo-wrapper">
           <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
@@ -26,7 +28,7 @@ const Home = () => {
       </button>
 
       
-      <button className="button-classroom" onClick={() => navigate("/Login_Usuario")}>
+      <button className="button-classroom" onClick={() => navigate("/Registro_Usuario")}>
         <div className="logo-wrapper">
           <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
@@ -41,13 +43,15 @@ const Home = () => {
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Login_Admin" element={<Login_Admin />} />
-        <Route path="/Login_Usuario" element={<Login_Usuario />} />
-      </Routes>
-    </Router>
+  <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Login_Admin" element={<Login_Admin />} />
+      <Route path="/Login_Usuario" element={<Login_Usuario />} />
+      <Route path="/Registro_Admin" element={<Registro_Admin />} />  {/* Nueva */}
+      <Route path="/Registro_Usuario" element={<Registro_Usuario />} /> {/* Nueva */}
+    </Routes>
+  </Router>
   );
 };
 
