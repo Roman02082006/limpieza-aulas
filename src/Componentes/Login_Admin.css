@@ -84,28 +84,10 @@ opacity: 0.8;
   padding: 0.8rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(90deg,red,green,blue);
+  background: blue;
   background-size: 300px 300px;
   color: white;
   font-weight: bold;
   cursor: pointer;
   animation: rgbButton 6s infinite alternate ease-in-out;
-}
-
-@keyframes rgbButton {
-
-0%{
-  background-position: 0% 50%;
-  box-shadow: 0 0 10px red, 0 0 20px green,0 0 40px blue;
-}
-
-50%{
-  background-position: 100% 50%;
-  box-shadow: 0 0 20px blue, 0 0 40px red,0 0 60px green;
-}
-
-100%{
-  background-position: 0% 50%;
-  box-shadow: 0 0 10px green, 0 0 20px blue,0 0 40px red;
-}
 }
