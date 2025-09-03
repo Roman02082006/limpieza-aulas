@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import './Login_Usuario.css';
+import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
   // Estados para correo y contraseña
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mensaje, setMensaje] = useState("");
-
+  const navigate =useNavigate()
   // Función que maneja el submit del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,6 +67,13 @@ export default function LoginForm() {
           className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
         >
           Entrar
+        </button>
+        
+        <button
+        type="button"
+        className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
+        onClick={() =>navigate("/Registro_Usuario") }>
+          Registrar
         </button>
       </form>
 
