@@ -44,7 +44,7 @@ function App() {
 
       <div className="main-content">
       <div className="header">
-      <span>Pagina Principal Del Administrador</span> 
+      <span>Página Principal Del Administrador</span> 
         <div className="theme-switcher">
         <div className="circle-white"></div>
         <div className="circle-dark"></div>
