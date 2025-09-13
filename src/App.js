@@ -6,7 +6,7 @@ import Login_Admin from './Componentes/Login_Admin';
 import Login_Usuario from './Componentes/Login_Usuario';
 import Registro_Admin from './Componentes/Registro_Admin';
 import Registro_Usuario from './Componentes/Registro_Usuario';
-import PanelAdminUsuario from './pages/PanelAdminUsuario';
+import PanelAdminUsuario from './Pages/PanelAdminUsuario';
 
 const Home = () => {
   const navigate = useNavigate();
