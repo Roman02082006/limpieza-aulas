@@ -1,15 +1,15 @@
 import React from 'react';
 import AltaAula from "../Componentes/AltaAula";
-import ListadoAulas from "../Componentes/ListadoAulas";
+import ListadoAulas from "../Componente/ListadoAulas";
 import AltaPersonal from "../Componentes/AltaPersonal";
 import ListadoPersonal from "../Componentes/ListadoPersonal";
 import AltaHorario from "../Componentes/AltaHorario";
-import ListadoHorarios from "../Componentes/ListadoHorario";
+import ListadoHorarios from "../Componentes/ListadoHorarios";
 
 const PanelAdminUsuario = ({ tipo }) => {
   return (
     <div>
-      <h1>🧹 Gestión de Limpieza y Personal de Aulas</h1>
+      <h1>Gestión de Limpieza y Personal de Aulas</h1>
 
       {tipo === "admin" && (
         <div>
