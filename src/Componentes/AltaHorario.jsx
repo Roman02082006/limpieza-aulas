@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { db } from "../Firebase/firebase";
 
 export default function AltaHorario() {
   const [aula, setAula] = useState("");

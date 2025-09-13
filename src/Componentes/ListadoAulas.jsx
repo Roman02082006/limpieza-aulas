@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, updateDoc, doc, deleteDoc } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { db } from "../Firebase/firebase";
 
 export default function ListadoAulas() {
   const [aulas, setAulas] = useState([]);
