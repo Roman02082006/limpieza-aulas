@@ -1,0 +1,40 @@
+					modelo mental facil
+
+Coleccion = carpeta con fichas
+
+Domcumento = una ficha con datos (campos)
+
+Campo = dato dentro de la ficha (texto,numero,booleano,array).
+
+Ejemplo: coleccion "profesores" con documentos (uno por profesor)
+
+
+conectar app a firebae
+				leer lista basica (getDocs)
+import {collection, getDocs} from "firebase/firestore";
+
+const  col = collection (db, "profesores");
+const  snap = await getDocs (col);
+const  data = snap.docs.map (d => ({id: d.id, ...d.data()}));
+console.log (data);
+
+			Ordenar Resultados
+import {query,orderBy,getdocs,collection} from "firebase/firestore"
+const col = collection (db, "Profesores");
+const q = query (col, orderBy ("apellido", "asc"));
+const snap = await getDocs (q);
+
+
+
+
+
+import {collection, getDocs}  from "firebase/firestore";
+const col = collection (db, "Administrador");
+const snap = await getDocs (col);
+const data = snap.docs.map (d => ({id: d.id, ...d.data()}));
+console.log (data);
+
+import {query,orderBy,getDocs,collection} from "firebase/firestore"
+const col = collection (db, "Administrador");
+const q = query (col, orderBy ("apellido", "asc"));
+const snap = await getDocs (q);
