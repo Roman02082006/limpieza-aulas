@@ -1,10 +1,10 @@
 import React from 'react';
 import AltaAula from "../Componentes/AltaAula";
-import ListadoAulas from "../Componente/ListadoAulas";
+import ListadoAulas from "../Componentes/ListadoAulas";
 import AltaPersonal from "../Componentes/AltaPersonal";
 import ListadoPersonal from "../Componentes/ListadoPersonal";
 import AltaHorario from "../Componentes/AltaHorario";
-import ListadoHorarios from "../Componentes/ListadoHorarios";
+import ListadoHorarios from "../Componentes/ListadoHorario";
 
 const PanelAdminUsuario = ({ tipo }) => {
   return (

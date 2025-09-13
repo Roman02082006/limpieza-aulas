@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { db } from "../Firebase/firebase";
 
 export default function ListadoHorarios() {
   const [horarios, setHorarios] = useState([]);
