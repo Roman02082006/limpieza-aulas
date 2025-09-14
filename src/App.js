@@ -70,7 +70,7 @@ import PrivateRoute from "./Componentes/PrivateRoute";
 
 
 import PanelAdminUsuario from "./Pages/PanelAdminUsuario";
-import PanelUsuario from "./Pages/PanelUsuario";
+import PanelUsuario from "./Pages/PanelAdminUsuario";
 
 const Home = () => {
   const navigate = useNavigate();
