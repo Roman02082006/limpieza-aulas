@@ -15,9 +15,9 @@ export default function LoginForm() {
     const mockUser = { email: "demo@ejemplo.com", password: "1234" };
 
     if (email === mockUser.email && password === mockUser.password) {
-      setMensaje("✅ Login exitoso, ¡bienvenido!");
+      setMensaje("Login exitoso, ¡bienvenido!");
     } else {
-      setMensaje("❌ Usuario o contraseña incorrectos");
+      setMensaje("Usuario o contraseña incorrectos");
     }
   };
 
@@ -60,7 +60,7 @@ export default function LoginForm() {
         <button
         type="button"
         className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
-        onClick={() =>navigate("/Registro_Admin") }>
+        onClick={() =>navigate("/PanelAdminUsuario") }>
           Registrar
         </button>
       </form>
