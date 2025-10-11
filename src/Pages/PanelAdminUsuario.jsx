@@ -64,9 +64,7 @@ const PanelAdminUsuario = ({ tipo }) => {
           <AltaHorario />
           <ListadoHorarios />
 
-          {/* -------------------
-              CRUD de ejemplo
-          -------------------- */}
+          
           <h2 style={{ marginTop: "30px" }}>CRUD de Personas</h2>
           <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", width: "100%" }}>
             <thead style={{ background: "#f4f4f4" }}>
