@@ -1,0 +1,32 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Welcome.css";
+
+const Welcome = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="welcome-container">
+      <div className="form-box">
+        <h1>
+          Bienvenido a <br />
+          <span>Limpieza De Aulas</span>
+        </h1>
+
+        <div className="buttons">
+          <button className="btn login-btn" onClick={() => navigate("/login")}>
+            Login
+          </button>
+          <button
+            className="btn register-btn"
+            onClick={() => navigate("/registro")}
+          >
+            Registro
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Welcome;
