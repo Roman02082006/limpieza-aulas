@@ -68,7 +68,7 @@ import PrivateRoute from "./Componentes/PrivateRoute";
 import Login_Admin from './Componentes/Login_Admin';
 import Login_Usuario from './Componentes/Login_Usuario';
 import Registro_Admin from './Componentes/Registro_Admin';
-import Registro_Usuario from './Componentes/Registro_Usuario';
+import Registro_Usuario from './Componentes/inicio_usuario';
 import PanelAdminUsuario from './Pages/PanelAdminUsuario';
 
 const Home = () => {
