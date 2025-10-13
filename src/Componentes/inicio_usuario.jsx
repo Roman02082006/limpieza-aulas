@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./inicio_usuario.css";
 
-const Welcome = () => {
+const InicioUsuario = () => {
   const navigate = useNavigate();
 
   return (
@@ -14,12 +14,12 @@ const Welcome = () => {
         </h1>
 
         <div className="buttons">
-          <button className="btn login-btn" onClick={() => navigate("/login")}>
+          <button className="btn login-btn" onClick={() => navigate("/Login_Usuario")}>
             Login
           </button>
           <button
             className="btn register-btn"
-            onClick={() => navigate("/registro")}
+            onClick={() => navigate("/Registro_Usuario")}
           >
             Registro
           </button>
@@ -29,4 +29,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default InicioUsuario;

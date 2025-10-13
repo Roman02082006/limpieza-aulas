@@ -68,7 +68,7 @@ import PrivateRoute from "./Componentes/PrivateRoute";
 import Login_Admin from './Componentes/Login_Admin';
 import Login_Usuario from './Componentes/Login_Usuario';
 import Registro_Admin from './Componentes/Registro_Admin';
-import Registro_Usuario from './Componentes/inicio_usuario';
+import InicioUsuario from './Componentes/inicio_usuario';
 import PanelAdminUsuario from './Pages/PanelAdminUsuario';
 
 const Home = () => {
@@ -114,7 +114,7 @@ const App = () => {
         <Route path="/Login_Admin" element={<Login_Admin />} />
         <Route path="/Login_Usuario" element={<Login_Usuario />} />
         <Route path="/Registro_Admin" element={<Registro_Admin />} />
-        <Route path="/Registro_Usuario" element={<Registro_Usuario />} />
+        <Route path="/inicio_usuario" element={<InicioUsuario />} />
       </Routes>
     </Router>
   );
