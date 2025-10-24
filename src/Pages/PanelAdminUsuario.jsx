@@ -9,9 +9,6 @@ import ListadoHorarios from "../Componentes/ListadoHorario";
 const PanelAdminUsuario = ({ tipo }) => {
   const roles = ["preceptores", "porteros", "admin", "regencia"];
 
-  // ---------------------------
-  // CRUD de ejemplo (Personas)
-  // ---------------------------
   const [data, setData] = useState([
     { id: 1, nombre: "Juan", apellido: "Pérez", correo: "juanp@gmail.com", telefono: "351-555-5555", ubicacion: "Córdoba", rol: "Preceptor" },
     { id: 2, nombre: "María", apellido: "Gómez", correo: "maria@gmail.com", telefono: "351-444-4444", ubicacion: "Buenos Aires", rol: "Portera" },

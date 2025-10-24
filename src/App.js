@@ -77,7 +77,7 @@ const Home = () => {
   return (
     <div className="home-container">
       
-      <button className="button-classroom" onClick={() => navigate("/Registro_Admin")}>
+      <button className="button-classroom" onClick={() => navigate("/inicio_usuario")}>
         <div className="logo-wrapper">
           <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
