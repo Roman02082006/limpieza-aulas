@@ -5,8 +5,8 @@ import RegistroAdmin from "./Componentes/Registro_Admin";
 import RegistroUsuario from "./Componentes/Registro_Usuario";
 import LoginAdmin from "./Componentes/Login_Admin";
 import LoginUsuario from "./Componentes/Login_Usuario";
-import PaginaUsuario from "./Componentes/Página_Usuario";
-import InicioUsuario from "./Componentes/Inicio_Usuario"; 
+import PaginaUsuario from "./Componentes/Pagina_Usuario"; 
+import InicioUsuario from "./Componentes/Inicio_Usuario";
 
 function Home() {
   const navigate = useNavigate();
@@ -21,6 +21,12 @@ function Home() {
       >
         Registro Usuario
       </button>
+      <button
+        style={{ marginLeft: "20px" }}
+        onClick={() => navigate("/inicio_usuario")}
+      >
+        Inicio Usuario
+      </button>
     </div>
   );
 }
@@ -30,12 +36,12 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/inicio_usuario" element={<InicioUsuario />} /> 
+        <Route path="/inicio_usuario" element={<InicioUsuario />} />
         <Route path="/registro-admin" element={<RegistroAdmin />} />
         <Route path="/registro-usuario" element={<RegistroUsuario />} />
         <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/login-usuario" element={<LoginUsuario />} />
-        <Route path="/pagina_usuario" element={<PaginaUsuario />} /> 
+        <Route path="/pagina_usuario" element={<PaginaUsuario />} />
       </Routes>
     </Router>
   );

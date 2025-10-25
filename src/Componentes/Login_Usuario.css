@@ -1,99 +1,48 @@
-.login-container{
+.login-container {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: #000;
+  background: #000 !important;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
 }
-
-
 
 .login-container form {
   position: relative;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.85) !important;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.1);
-  color: #fff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  color: #fff !important;
   min-width: 320px;
   backdrop-filter: blur(5px);
-
-}
-.login-container .form-group{
-  margin-bottom: 1.5rem;
 }
 
-.login-container label{
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #ccc;
-
+.login-container input {
+  width: 100% !important;
+  padding: 0.7rem !important;
+  border-radius: 10px !important;
+  border: none !important;
+  outline: none !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
 }
 
-.login-container input{
-  width: 100%;
-  padding: 0.7rem;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.login-container button{
-  width: 100%;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  background: #1a73e8;
-  color: white;
-  font-weight: bold;
+.login-container button {
+  width: 100% !important;
+  padding: 0.8rem !important;
+  border: none !important;
+  border-radius: 10px !important;
+  background: #1a73e8 !important;
+  color: white !important;
+  font-weight: bold !important;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.login-container button:hover{
-  background: #1669c1;
-}
-
-.login-container span{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: white;
-  opacity: 0.8;
-  animation: move 20s linear infinite, blink 2s ease-in-out infinite;
-}
-
-@keyframes move{
-  0%{
-    transform: translate(0, 0);
-  }
-
-  25%{
-      transform: translate(50px,100px);
-  }
-
-  50%{
-    transform: translate(-100px,200px);
-  }
-
-  75%{
-    transform: translate(150px,50px);
-  }
-
-  100%{
-    transform: translate(0,0)
-  }
-}
-
-@keyframes blink  {
-  0%, 100% {opacity: 0.2;}
-  50% {opacity: 1;}
+.login-container button:hover {
+  background: #1669c1 !important;
 }
