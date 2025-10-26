@@ -1,194 +1,79 @@
-
-
-.App {
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 100%;
-  background-color:  #042c4c;
-  width: 100%;
-  
-}
-.fullscreen {
-  width: 100%;
-  height: 100%;
-}
-
-*{margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.circulo {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  margin: 10px;
-  top: 0;
-  right: 0;
-  background-color: #829db3;
-  border-radius: 50%;
-  border: 1px solid;
-  border-color: #ffffff;
-}
-
-.circulo2 {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  margin-top: 10px;
-  margin-right: 80px;
-  top: 0;
-  right: 0;
-  background-color: #214868;
-  border-radius: 50%;
-  border: 1px solid;
-  border-color: #ffffff;
-}
-.sidebar{
-  width: 200px;
-  position: fixed;
-  background-color: #0d4a5f;
-  height: 100vh;
-  padding: 10px;
-  color: white;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-100%);
-  z-index: 1000;
-}
-.sidebar.open{
-  transform: translateX(0);
-}
-
-.menu-icon{
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001;
-  cursor: pointer;
-}
-
-.menu-icon .bar {
-  width: 30px;
-  height: 4px;
-  background-color: white;
-  margin: 5px 0;
-}
-
-.menu-items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
+.grid-aulas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
   margin-top: 20px;
-  padding-left: 10px;
 }
 
-.icon-square,.icon-circle,.icon-hex {
-  background-color: #ccc;
+
+.card-aula {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  color: #fff;
+}
+.card-aula:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
+
+.icono-aula { font-size: 34px; margin-bottom: 8px; }
+
+.estado { font-weight: 700; margin-top: 8px; }
+.estado.verde { color: #2ecc71; }
+.estado.amarillo { color: #f1c40f; }
+.estado.rojo { color: #e74c3c; }
+
+.titulo-aulas {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
-.icon-square {
-  width: 20px;
-  height: 20px;
+.aulas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
 }
 
-.icon-circle {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
+.aula-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
-.icon-hex {
-  width: 25px;
-  height: 25px;
-  clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%, 0% 50%);
-  background-color: #ccc;
+.aula-card:hover {
+  transform: translateY(-6px);
 }
 
-.bottom-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  justify-content: center;
+.aula-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
-.input-placeholder{
-  width: 60px;
-  height: 15px;
-  background-color: #ccc;
-  border-radius: 10px;
+.estado {
+  font-weight: bold;
 }
 
-.main-content{
-  flex: 1;
-  background-color: #2c8a78;
-  padding: 20px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: auto;
+/* Colores según estado */
+.limpia {
+  border: 2px solid #4caf50;
+  color: #4caf50;
 }
 
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.en-limpieza {
+  border: 2px solid #ffc107;
+  color: #ffc107;
 }
 
-.theme-switcher .circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-.circle-white {
-  background-color: #fff;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-.circle-dark{
-  background-color: #355e70;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-.card{
-  background-color: #0d4a5f;
-  border-radius: 15px;
-  padding: 20px;
-  margin-top: 40px;
-  width: 300px;
-}
-
-.card-header {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.card-body .line {
-  height: 12px;
-  background-color: #ccc;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  width: 80%;
-}
-
-.dropdown-container {
-  margin-top: 30px;
-}
-
-.custom-toggle{
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  color: white;
+.pendiente {
+  border: 2px solid #f44336;
+  color: #f44336;
 }

@@ -1,44 +1,150 @@
 .registro-container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .registro-form {
-    display: inline-block;
-    text-align: left;
-    background: #eef6ff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .registro-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .registro-form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .registro-form button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .registro-form button:hover {
-    background: #0056b3;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #042c4c, #0d4a5f, #2c8a78);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: move 18s linear infinite, blink 3s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(100px, 50px); }
+  50% { transform: translate(-120px, 80px); }
+  75% { transform: translate(80px, -60px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+
+.registro-form {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 320px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.registro-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.registro-form input::placeholder {
+  color: #cde3f1;
+}
+
+.btn-principal {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  background: #2c8a78;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-principal:hover {
+  background: #3db596;
+}
+
+
+.linea-o {
+  margin: 1rem 0;
+  color: #d0f1e7;
+  font-size: 0.9rem;
+}
+
+/* Botones sociales */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.social-buttons button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.social-buttons button:hover {
+  transform: scale(1.1);
+}
+
+.google { background: #db4437; }
+.facebook { background: #1877f2; }
+.instagram { background: #e4405f; }
+
+.btn-volver {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 12px;
+  background: #1a73e8;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: #155bb5;
+}
+
+
+.mensaje {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Registro_Usuario.css";
 import { useNavigate } from "react-router-dom";
+import { FaGoogle, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function RegistroUsuario() {
   const [nombre, setNombre] = useState("");
@@ -12,7 +13,6 @@ export default function RegistroUsuario() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Guardar usuario simulado (solo demostrativo)
     if (nombre && email && password) {
       setMensaje("✅ Registro exitoso, redirigiendo...");
       setTimeout(() => navigate("/pagina_usuario"), 1000);
@@ -23,27 +23,27 @@ export default function RegistroUsuario() {
 
   return (
     <div className="registro-container">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-2xl shadow-md w-80"
-      >
-        <h2 className="text-2xl font-bold mb-4 text-center">Registro Usuario</h2>
+      {/* Partículas decorativas */}
+      {[...Array(20)].map((_, i) => (
+        <span key={i} className="particle" />
+      ))}
+
+      <form onSubmit={handleSubmit} className="registro-form">
+        <h2 className="titulo">Registro de Usuario</h2>
 
         <input
           type="text"
-          placeholder="Nombre"
+          placeholder="Nombre completo"
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
-          className="w-full mb-3 p-2 border rounded-lg"
           required
         />
 
         <input
           type="email"
-          placeholder="Correo"
+          placeholder="Correo electrónico"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full mb-3 p-2 border rounded-lg"
           required
         />
 
@@ -52,27 +52,37 @@ export default function RegistroUsuario() {
           placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full mb-3 p-2 border rounded-lg"
           required
         />
 
-        <button
-          type="submit"
-          className="w-full bg-green-500 text-white p-2 rounded-lg hover:bg-green-600"
-        >
+        <button type="submit" className="btn-principal">
           Registrarse
         </button>
+
+        <div className="linea-o">O registrarse con</div>
+
+        <div className="social-buttons">
+          <button type="button" className="google">
+            <FaGoogle />
+          </button>
+          <button type="button" className="facebook">
+            <FaFacebookF />
+          </button>
+          <button type="button" className="instagram">
+            <FaInstagram />
+          </button>
+        </div>
 
         <button
           type="button"
           onClick={() => navigate("/login-usuario")}
-          className="w-full bg-blue-500 text-white p-2 mt-3 rounded-lg hover:bg-blue-600"
+          className="btn-volver"
         >
           Volver al Login
         </button>
-      </form>
 
-      {mensaje && <p className="mt-4 text-lg font-medium">{mensaje}</p>}
+        {mensaje && <p className="mensaje">{mensaje}</p>}
+      </form>
     </div>
   );
 }

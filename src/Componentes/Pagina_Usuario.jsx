@@ -1,19 +1,27 @@
 import React, { useState } from "react";
-import "./Pagina_Usuario.css"; 
+import "./Pagina_Usuario.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
-import { FaEllipsisV } from "react-icons/fa";
+import { FaEllipsisV, FaBroom, FaSchool, FaExclamationTriangle } from "react-icons/fa";
 
 function PaginaUsuario() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const aulas = [
+    { id: 1, nombre: "Aula 101", estado: "Limpia" },
+    { id: 2, nombre: "Aula 102", estado: "En limpieza" },
+    { id: 3, nombre: "Aula 103", estado: "Pendiente" },
+    { id: 4, nombre: "Laboratorio 1", estado: "Limpia" },
+    { id: 5, nombre: "Aula 104", estado: "Pendiente" },
+  ];
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   return (
     <div className="App">
-      {/* Menú lateral */}
+    
       <div className="menu-icon" onClick={toggleSidebar}>
         <div className="bar" />
         <div className="bar" />
@@ -34,9 +42,30 @@ function PaginaUsuario() {
         </div>
       </div>
 
-      {/* Contenido principal */}
+     
       <div className="main-content">
-        <span>Página Principal del Usuario</span> 
+        <span>Página Principal del Usuario</span>
+
+        <h2 className="titulo-aulas">Listado de Aulas</h2>
+        <div className="aulas-grid">
+          {aulas.map((aula) => (
+            <div
+              key={aula.id}
+              className={`aula-card ${aula.estado.toLowerCase().replace(" ", "-")}`}
+            >
+              <div className="icono-estado">
+                {aula.estado === "Limpia" && <FaSchool className="icon limpia-icon" />}
+                {aula.estado === "En limpieza" && <FaBroom className="icon limpieza-icon" />}
+                {aula.estado === "Pendiente" && (
+                  <FaExclamationTriangle className="icon pendiente-icon" />
+                )}
+              </div>
+              <h3>{aula.nombre}</h3>
+              <p className="estado">{aula.estado}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="header">
           <div className="icon-circle">
             <div className="circle-white" />
@@ -55,19 +84,6 @@ function PaginaUsuario() {
                 </DropdownMenu>
               </Dropdown>
             </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-header">
-            <div className="icon-circle" />
-            <div className="icon-square" />
-            <div className="icon-square" />
-          </div>
-          <div className="card-body">
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
           </div>
         </div>
       </div>

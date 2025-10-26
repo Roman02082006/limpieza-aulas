@@ -9,6 +9,7 @@
   overflow: hidden;
 }
 
+/* Formulario */
 .login-container form {
   position: relative;
   z-index: 2;
@@ -21,6 +22,7 @@
   backdrop-filter: blur(5px);
 }
 
+/* Inputs */
 .login-container input {
   width: 100% !important;
   padding: 0.7rem !important;
@@ -31,6 +33,7 @@
   color: #fff !important;
 }
 
+/* Botones */
 .login-container button {
   width: 100% !important;
   padding: 0.8rem !important;
@@ -45,4 +48,42 @@
 
 .login-container button:hover {
   background: #1669c1 !important;
+}
+
+/* Partículas animadas */
+.login-container span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.8;
+  animation: move 20s linear infinite, blink 2s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, 100px);
+  }
+  50% {
+    transform: translate(-100px, 200px);
+  }
+  75% {
+    transform: translate(150px, 50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
 }
