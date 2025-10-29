@@ -69,6 +69,7 @@ import Login_Admin from './Componentes/Login_Admin';
 import Login_Usuario from './Componentes/Login_Usuario';
 import Registro_Admin from './Componentes/Registro_Admin';
 import InicioUsuario from './Componentes/inicio_usuario';
+import InicioAdmin from './Componentes/inicio_admin';
 import PanelAdminUsuario from './Pages/PanelAdminUsuario';
 
 const Home = () => {
@@ -77,7 +78,7 @@ const Home = () => {
   return (
     <div className="home-container">
       
-      <button className="button-classroom" onClick={() => navigate("/inicio_usuario")}>
+      <button className="button-classroom" onClick={() => navigate("/inicio_admin")}>
         <div className="logo-wrapper">
           <svg className="classroom-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect width="100%" height="100%" rx="4" fill="#1a73e8"/>
@@ -109,12 +110,13 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Panel_Admin" element={<PanelAdminUsuario tipo="admin" />} />
-        <Route path="/Panel_Usuario" element={<PanelAdminUsuario tipo="usuario" />} />
+        <Route path="/PanelAdminUsurio" element={<PanelAdminUsuario tipo="admin" />} />
+        <Route path="/PanelAdminUsuario" element={<PanelAdminUsuario tipo="usuario" />} />
         <Route path="/Login_Admin" element={<Login_Admin />} />
         <Route path="/Login_Usuario" element={<Login_Usuario />} />
         <Route path="/Registro_Admin" element={<Registro_Admin />} />
         <Route path="/inicio_usuario" element={<InicioUsuario />} />
+        <Route path="/inicio_admin" element={<InicioAdmin/>} />
       </Routes>
     </Router>
   );

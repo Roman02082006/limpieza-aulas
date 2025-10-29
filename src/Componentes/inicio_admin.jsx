@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./inicio_admin.css";
 
-const InicioUsuario = () => {
+const InicioAdmin = () => {
   const navigate = useNavigate();
 
   return (
@@ -14,13 +14,12 @@ const InicioUsuario = () => {
         </h1>
 
         <div className="buttons">
-          <button className="btn login-btn" onClick={() => navigate("/Login_Usuario")}>
+          <button className="btn login-btn" onClick={() => navigate("/Login_Admin")}>
             Login
           </button>
           <button
             className="btn register-btn"
-            onClick={() => navigate("/Registro_Usuario")}
-          >
+            onClick={() => navigate("/Registro_Admin")}>
             Registro
           </button>
         </div>

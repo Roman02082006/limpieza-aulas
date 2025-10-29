@@ -19,8 +19,7 @@ const InicioUsuario = () => {
           </button>
           <button
             className="btn register-btn"
-            onClick={() => navigate("/Registro_Usuario")}
-          >
+            onClick={() => navigate("/Registro_Usuario")}>
             Registro
           </button>
         </div>

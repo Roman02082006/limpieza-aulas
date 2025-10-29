@@ -112,7 +112,8 @@ const PanelAdminUsuario = ({ tipo }) => {
             )}
           </div>
         </div>
-      )}
+      )
+      }
 
       {tipo === "usuario" && (
         <div>

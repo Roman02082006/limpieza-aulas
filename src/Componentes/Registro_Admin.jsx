@@ -7,7 +7,7 @@ export default function RegistroAdmin() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Registro de administrador exitoso");
-    navigate("/Login_Admin"); // Redirige al login de admin
+    navigate("/PanelAdminUsuario");
   };
 
   return (
