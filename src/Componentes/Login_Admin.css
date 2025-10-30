@@ -1,93 +1,145 @@
-.login-container-admin{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: #000;
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #d0e6f7, #b4d4f0);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-
+  height: 100vh;
+  margin: 0;
 }
 
-.login-container-admin::before{
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-  radial-gradient(circle at 20% 30%,red,transparent 40%),
-  radial-gradient(circle at 20% 30%,blue,transparent 40%),
-  radial-gradient(circle at 20% 30%,lime,transparent 40%),
-  radial-gradient(circle at 20% 30%,magenta,transparent 40%),
-  radial-gradient(circle at 20% 30%,cyan,transparent 40%),
-  radial-gradient(circle at 20% 30%,yellow,transparent 40%);
-filter: blur(100px);
-animation: moveRGB 20s infinite alternate ease-in-out;
-z-index: 0;
-opacity: 0.8;
-}
-@keyframes moveRGB {
-
-0%{
-  transform: translate(0,0) rotate(0deg);
-  filter: blur(120px) brightness(1.2);
-}
-50%{
-  transform: translate(5%,-5%) rotate(180deg);
-  filter: blur(120px) brightness(1.5);
-}
-100%{
-  transform: translate(0,0) rotate(360deg);
-  filter: blur(100px) brightness(1.2);
-}
-
-}
-
-.login-container-admin form {
-  position: relative;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.85);
+.container {
+  background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(255,255,255,01);
-  color: #fff;
-  min-width: 320px;
-  backdrop-filter: blur(5px);
-
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-in-out;
 }
-.login-container-admin .form-group{
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #1b4b8a;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #4a6fa5;
   margin-bottom: 1.5rem;
 }
 
-.login-container-admin label{
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #ccc;
-
-}
-
-.login-container-admin input{
-  width: 100%;
-  padding: 0.7rem;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.login-container-admin button{
+form input {
   width: 100%;
   padding: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  background: blue;
-  background-size: 300px 300px;
+  margin: 0.5rem 0;
+  border: 1px solid #bcd4f3;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fcff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+form input:focus {
+  outline: none;
+  border: 1px solid #4a90e2;
+  box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
+}
+
+form button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.8rem;
+  background: #4a90e2;
   color: white;
   font-weight: bold;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  animation: rgbButton 6s infinite alternate ease-in-out;
+  transition: background 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background: #357abd;
+}
+
+.mensaje-login {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #1b4b8a;
+}
+
+.divider {
+  margin: 1.2rem 0;
+  color: #6c8ab7;
+  font-size: 0.9rem;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #eaf2fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+  font-size: 1.3rem;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  background: #dce9fa;
+}
+
+.google {
+  color: #db4437;
+}
+
+.facebook {
+  color: #1877f2;
+}
+
+.x {
+  color: #000;
+}
+
+.loading-icons {
+  font-size: 1.5rem;
+  color: #6c8ab7;
+}
+
+.registrar-btn {
+  background: none;
+  border: none;
+  color: #4a6fa5;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.registrar-btn:hover {
+  color: #1b4b8a;
+  text-decoration: underline;
 }

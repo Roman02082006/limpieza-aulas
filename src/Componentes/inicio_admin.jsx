@@ -8,19 +8,24 @@ const InicioAdmin = () => {
   return (
     <div className="welcome-container">
       <div className="form-box">
-        <h1>
+        <h1 className="title">
           Bienvenido a <br />
-          <span>Limpieza De Aulas</span>
+          <span className="highlight">Limpieza de Aulas</span>
         </h1>
+
+        <p className="subtitle">
+          Gestioná tus aulas de forma simple, rápida y eficiente.
+        </p>
 
         <div className="buttons">
           <button className="btn login-btn" onClick={() => navigate("/Login_Admin")}>
-            Login
+            Iniciar sesión
           </button>
           <button
             className="btn register-btn"
-            onClick={() => navigate("/Registro_Admin")}>
-            Registro
+            onClick={() => navigate("/Registro_Admin")}
+          >
+            Registrarse
           </button>
         </div>
       </div>
