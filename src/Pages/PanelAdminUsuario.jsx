@@ -5,6 +5,7 @@ import AltaPersonal from "../Componentes/AltaPersonal";
 import ListadoPersonal from "../Componentes/ListadoPersonal";
 import AltaHorario from "../Componentes/AltaHorario";
 import ListadoHorarios from "../Componentes/ListadoHorario";
+import "./PanelAdminUsuario.css"; // ✅ Ruta corregida
 
 const PanelAdminUsuario = ({ tipo }) => {
   const roles = ["preceptores", "porteros", "admin", "regencia"];
@@ -38,86 +39,88 @@ const PanelAdminUsuario = ({ tipo }) => {
   const deleteItem = (id) => setData(data.filter((item) => item.id !== id));
 
   return (
-    <div>
-      <h1>Gestión de Limpieza y Personal de Aulas</h1>
+    <div className="panel-container">
+      <h1 className="titulo">Gestión de Limpieza y Personal de Aulas</h1>
 
       {tipo === "admin" && (
-        <div>
-          <h2>Panel Admin</h2>
+        <>
+          <h2 className="subtitulo">Panel Admin</h2>
 
-          {/* Aulas */}
-          <AltaAula />
-          <ListadoAulas />
+          <section className="seccion">
+            <AltaAula />
+            <ListadoAulas />
+          </section>
 
-          {/* Personal */}
           {roles.map((rol) => (
-            <div key={rol}>
+            <section className="seccion" key={rol}>
               <AltaPersonal tipo={rol} />
               <ListadoPersonal tipo={rol} />
-            </div>
+            </section>
           ))}
 
-          {/* Horarios */}
-          <AltaHorario />
-          <ListadoHorarios />
+          <section className="seccion">
+            <AltaHorario />
+            <ListadoHorarios />
+          </section>
 
-          
-          <h2 style={{ marginTop: "30px" }}>CRUD de Personas</h2>
-          <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", width: "100%" }}>
-            <thead style={{ background: "#f4f4f4" }}>
-              <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo</th>
-                <th>Teléfono</th>
-                <th>Ubicación</th>
-                <th>Rol</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((row) => (
-                <tr key={row.id}>
-                  <td>{row.id}</td>
-                  <td>{row.nombre}</td>
-                  <td>{row.apellido}</td>
-                  <td>{row.correo}</td>
-                  <td>{row.telefono}</td>
-                  <td>{row.ubicacion}</td>
-                  <td>{row.rol}</td>
-                  <td>
-                    <button onClick={() => editItem(row)} style={{ marginRight: "5px", background: "orange" }}>Editar</button>
-                    <button onClick={() => deleteItem(row.id)} style={{ background: "red", color: "white" }}>Eliminar</button>
-                  </td>
+          <section className="crud-section">
+            <h2 className="subtitulo">CRUD de Personas</h2>
+
+            <table className="tabla">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Correo</th>
+                  <th>Teléfono</th>
+                  <th>Ubicación</th>
+                  <th>Rol</th>
+                  <th>Acciones</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {data.map((row) => (
+                  <tr key={row.id}>
+                    <td>{row.id}</td>
+                    <td>{row.nombre}</td>
+                    <td>{row.apellido}</td>
+                    <td>{row.correo}</td>
+                    <td>{row.telefono}</td>
+                    <td>{row.ubicacion}</td>
+                    <td>{row.rol}</td>
+                    <td className="acciones">
+                      <button className="btn btn-editar" onClick={() => editItem(row)}>Editar</button>
+                      <button className="btn btn-eliminar" onClick={() => deleteItem(row.id)}>Eliminar</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-          {/* Formulario */}
-          <div style={{ marginTop: "20px" }}>
-            <h3>{editando ? "Editar Persona" : "Agregar Persona"}</h3>
-            <input name="nombre" placeholder="Nombre" value={form.nombre} onChange={handleChange} />
-            <input name="apellido" placeholder="Apellido" value={form.apellido} onChange={handleChange} />
-            <input name="correo" placeholder="Correo" value={form.correo} onChange={handleChange} />
-            <input name="telefono" placeholder="Teléfono" value={form.telefono} onChange={handleChange} />
-            <input name="ubicacion" placeholder="Ubicación" value={form.ubicacion} onChange={handleChange} />
-            <input name="rol" placeholder="Rol" value={form.rol} onChange={handleChange} />
+            <div className="form-container">
+              <h3>{editando ? "Editar Persona" : "Agregar Persona"}</h3>
 
-            {editando ? (
-              <button onClick={updateItem} style={{ marginLeft: "10px", background: "green", color: "white" }}>Guardar Cambios</button>
-            ) : (
-              <button onClick={addItem} style={{ marginLeft: "10px" }}>Agregar</button>
-            )}
-          </div>
-        </div>
-      )
-      }
+              <input name="nombre" placeholder="Nombre" value={form.nombre} onChange={handleChange} />
+              <input name="apellido" placeholder="Apellido" value={form.apellido} onChange={handleChange} />
+              <input name="correo" placeholder="Correo" value={form.correo} onChange={handleChange} />
+              <input name="telefono" placeholder="Teléfono" value={form.telefono} onChange={handleChange} />
+              <input name="ubicacion" placeholder="Ubicación" value={form.ubicacion} onChange={handleChange} />
+              <input name="rol" placeholder="Rol" value={form.rol} onChange={handleChange} />
+
+              {editando ? (
+                <button className="btn btn-guardar" onClick={updateItem}>Guardar Cambios</button>
+              ) : (
+                <button className="btn btn-agregar" onClick={addItem}>Agregar</button>
+              )}
+            </div>
+          </section>
+        </>
+      )}
 
       {tipo === "usuario" && (
-        <div>
-          <h2>Panel Usuario Común</h2>
+        <div className="panel-usuario">
+          <h2 className="subtitulo">Panel Usuario Común</h2>
           <ListadoAulas />
           <ListadoHorarios />
         </div>
