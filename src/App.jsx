@@ -1,59 +1,193 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AltaAula from "./AltaAula";
+import ListadoAulas from "./ListadoAulas";
+import AltaPersonal from "./AltaPersonal";
+import ListadoPersonal from "./ListadoPersonal";
+import AltaHorario from "./AltaHorario";
+import ListadoHorarios from "./ListadoHorario";
+import "./PanelAdminUsuario.css";
 
-import RegistroAdmin from "./Componentes/Registro_Admin";
-import RegistroUsuario from "./Componentes/Registro_Usuario";
-import LoginAdmin from "./Componentes/Login_Admin";
-import LoginUsuario from "./Componentes/Login_Usuario";
-import PaginaUsuario from "./Componentes/Pagina_Usuario";
-import InicioUsuario from "./Componentes/Inicio_Usuario";
+const PanelAdminUsuario = ({ tipo }) => {
+  const navigate = useNavigate(); // ✅ AHORA PODES NAVEGAR
 
-// ✅ Nuevo: Importamos el panel
-import PanelAdminUsuario from "./Pages/PanelAdminUsuario.jsx";
+  const roles = ["preceptores", "porteros", "admin", "regencia"];
 
-function Home() {
-  const navigate = useNavigate();
+  const [data, setData] = useState([
+    {
+      id: 1,
+      nombre: "Juan",
+      apellido: "Pérez",
+      correo: "juanp@gmail.com",
+      telefono: "351-555-5555",
+      ubicacion: "Córdoba",
+      rol: "Preceptor",
+    },
+    {
+      id: 2,
+      nombre: "María",
+      apellido: "Gómez",
+      correo: "maria@gmail.com",
+      telefono: "351-444-4444",
+      ubicacion: "Buenos Aires",
+      rol: "Portera",
+    },
+  ]);
+
+  const [form, setForm] = useState({
+    id: null,
+    nombre: "",
+    apellido: "",
+    correo: "",
+    telefono: "",
+    ubicacion: "",
+    rol: "",
+  });
+
+  const [editando, setEditando] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const addItem = () => {
+    setData([...data, { ...form, id: Date.now() }]);
+    setForm({
+      id: null,
+      nombre: "",
+      apellido: "",
+      correo: "",
+      telefono: "",
+      ubicacion: "",
+      rol: "",
+    });
+  };
+
+  const editItem = (item) => {
+    setForm(item);
+    setEditando(true);
+  };
+
+  const updateItem = () => {
+    setData(data.map((d) => (d.id === form.id ? form : d)));
+    setForm({
+      id: null,
+      nombre: "",
+      apellido: "",
+      correo: "",
+      telefono: "",
+      ubicacion: "",
+      rol: "",
+    });
+    setEditando(false);
+  };
+
+  const deleteItem = (id) => {
+    setData(data.filter((item) => item.id !== id));
+  };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Bienvenido</h1>
-      <button onClick={() => navigate("/registro-admin")}>Registro Admin</button>
-      <button style={{ marginLeft: "20px" }} onClick={() => navigate("/registro-usuario")}>
-        Registro Usuario
-      </button>
-      <button style={{ marginLeft: "20px" }} onClick={() => navigate("/inicio_usuario")}>
-        Inicio Usuario
+    <div className="panel-container">
+      <h1 className="titulo">Gestión de Limpieza y Personal de Aulas</h1>
+
+      {/* ✅ BOTÓN PARA VOLVER */}
+      <button className="btn btn-volver" onClick={() => navigate("/")}>
+        Volver al Inicio
       </button>
 
-      {/* ✅ Nuevo acceso al panel de gestión */}
-      <button
-        style={{ marginLeft: "20px" }}
-        onClick={() => navigate("/panel-admin-usuario")}
-      >
-        Panel Gestión
-      </button>
+      {tipo === "admin" && (
+        <>
+          <h2 className="subtitulo">Panel Admin</h2>
+
+          <section className="seccion">
+            <AltaAula />
+            <ListadoAulas />
+          </section>
+
+          {roles.map((rol) => (
+            <section className="seccion" key={rol}>
+              <AltaPersonal tipo={rol} />
+              <ListadoPersonal tipo={rol} />
+            </section>
+          ))}
+
+          <section className="seccion">
+            <AltaHorario />
+            <ListadoHorarios />
+          </section>
+
+          <section className="crud-section">
+            <h2 className="subtitulo">CRUD de Personas</h2>
+
+            <table className="tabla">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Correo</th>
+                  <th>Teléfono</th>
+                  <th>Ubicación</th>
+                  <th>Rol</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((row) => (
+                  <tr key={row.id}>
+                    <td>{row.id}</td>
+                    <td>{row.nombre}</td>
+                    <td>{row.apellido}</td>
+                    <td>{row.correo}</td>
+                    <td>{row.telefono}</td>
+                    <td>{row.ubicacion}</td>
+                    <td>{row.rol}</td>
+                    <td className="acciones">
+                      <button className="btn btn-editar" onClick={() => editItem(row)}>
+                        Editar
+                      </button>
+                      <button className="btn btn-eliminar" onClick={() => deleteItem(row.id)}>
+                        Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div className="form-container">
+              <h3>{editando ? "Editar Persona" : "Agregar Persona"}</h3>
+
+              <input name="nombre" placeholder="Nombre" value={form.nombre} onChange={handleChange} />
+              <input name="apellido" placeholder="Apellido" value={form.apellido} onChange={handleChange} />
+              <input name="correo" placeholder="Correo" value={form.correo} onChange={handleChange} />
+              <input name="telefono" placeholder="Teléfono" value={form.telefono} onChange={handleChange} />
+              <input name="ubicacion" placeholder="Ubicación" value={form.ubicacion} onChange={handleChange} />
+              <input name="rol" placeholder="Rol" value={form.rol} onChange={handleChange} />
+
+              {editando ? (
+                <button className="btn btn-guardar" onClick={updateItem}>
+                  Guardar Cambios
+                </button>
+              ) : (
+                <button className="btn btn-agregar" onClick={addItem}>
+                  Agregar
+                </button>
+              )}
+            </div>
+          </section>
+        </>
+      )}
+
+      {tipo === "usuario" && (
+        <div className="panel-usuario">
+          <h2 className="subtitulo">Panel Usuario Común</h2>
+          <ListadoAulas />
+          <ListadoHorarios />
+        </div>
+      )}
     </div>
   );
-}
+};
 
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/inicio_usuario" element={<InicioUsuario />} />
-        <Route path="/registro-admin" element={<RegistroAdmin />} />
-        <Route path="/registro-usuario" element={<RegistroUsuario />} />
-        <Route path="/login-admin" element={<LoginAdmin />} />
-        <Route path="/login-usuario" element={<LoginUsuario />} />
-        <Route path="/pagina_usuario" element={<PaginaUsuario />} />
-
-        {/* ✅ Nuevo: Ruta del Panel con tipo por defecto "admin" */}
-        <Route
-          path="/panel-admin-usuario"
-          element={<PanelAdminUsuario tipo="admin" />}
-        />
-      </Routes>
-    </Router>
-  );
-}
+export default PanelAdminUsuario;

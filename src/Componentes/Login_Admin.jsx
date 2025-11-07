@@ -29,7 +29,7 @@ export default function LoginAdmin() {
 
     if (email === mockUser.email && password === mockUser.password) {
       setMensaje("✅ Login exitoso, ¡bienvenido!");
-      setTimeout(() => navigate("/PanelAdminUsuario"), 1500);
+      setTimeout(() => navigate("/Panel_Admin"), 1500);
     } else {
       setMensaje("❌ Usuario o contraseña incorrectos");
     }

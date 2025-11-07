@@ -18,6 +18,7 @@ export default function RegistroAdmin() {
     e.preventDefault();
     alert("Registro de administrador exitoso");
     navigate("/PanelAdminUsuario");
+
   };
 
   return (

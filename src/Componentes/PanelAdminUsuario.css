@@ -1,0 +1,129 @@
+/* CONTENEDOR PRINCIPAL */
+.panel-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* TITULOS */
+.titulo {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+.subtitulo {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* SECCIONES DEL PANEL */
+.seccion {
+  margin-bottom: 30px;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+}
+
+/* ====== TABLA CRUD ====== */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabla thead {
+  background: #1a73e8;
+  color: white;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.tabla tr:nth-child(even) {
+  background: #f5f5f5;
+}
+
+/* BOTONES DE ACCIÓN */
+.acciones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 7px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.btn-editar {
+  background: #f4a100;
+  color: white;
+}
+
+.btn-editar:hover {
+  background: #d98d00;
+}
+
+.btn-eliminar {
+  background: #cc0000;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background: #a60000;
+}
+
+.btn-agregar,
+.btn-guardar {
+  background: #1a73e8;
+  color: white;
+  margin-top: 10px;
+}
+
+.btn-agregar:hover,
+.btn-guardar:hover {
+  background: #0c47a1;
+}
+
+/* ====== FORMULARIO DEL CRUD ====== */
+.form-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+
+.form-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* ===== PANEL USUARIO ===== */
+.panel-usuario {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+}

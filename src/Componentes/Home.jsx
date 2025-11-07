@@ -1,4 +1,4 @@
-import AltaAula from "../components/AltaAula";
+/*import AltaAula from "../components/AltaAula";
 import ListadoAulas from "../components/ListadoAulas";
 import AltaPersonal from "../components/AltaPersonal";
 import ListadoPersonal from "../components/ListadoPersonal";
@@ -27,6 +27,29 @@ export default function Home() {
 
       <AltaHorario />
       <ListadoHorarios />
+    </div>
+  );
+}
+*/
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function Home() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="home-container">
+      <h1>Selecciona el tipo de usuario</h1>
+
+      {/* ADMIN */}
+      <button onClick={() => navigate("/Panel_Admin")}>
+        Entrar como Admin
+      </button>
+
+      {/* USUARIO */}
+      <button onClick={() => navigate("/Panel_Usuario")}>
+        Entrar como Usuario
+      </button>
     </div>
   );
 }

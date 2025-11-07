@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import AltaAula from "../Componentes/AltaAula";
-import ListadoAulas from "../Componentes/ListadoAulas";
-import AltaPersonal from "../Componentes/AltaPersonal";
-import ListadoPersonal from "../Componentes/ListadoPersonal";
-import AltaHorario from "../Componentes/AltaHorario";
-import ListadoHorarios from "../Componentes/ListadoHorario";
-import "./PanelAdminUsuario.css"; // ✅ Ruta corregida
+import AltaAula from "./AltaAula";
+import ListadoAulas from "./ListadoAulas";
+import AltaPersonal from "./AltaPersonal";
+import ListadoPersonal from "./ListadoPersonal";
+import AltaHorario from "./AltaHorario";
+import ListadoHorarios from "./ListadoHorario";
+import "./PanelAdminUsuario.css";
+
 
 const PanelAdminUsuario = ({ tipo }) => {
   const roles = ["preceptores", "porteros", "admin", "regencia"];

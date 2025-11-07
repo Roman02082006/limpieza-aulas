@@ -70,7 +70,7 @@ import Login_Usuario from './Componentes/Login_Usuario';
 import Registro_Admin from './Componentes/Registro_Admin';
 import InicioUsuario from './Componentes/inicio_usuario';
 import InicioAdmin from './Componentes/inicio_admin';
-import PanelAdminUsuario from './Pages/PanelAdminUsuario';
+import PanelAdminUsuario from './Componentes/PanelAdminUsuario';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -110,13 +110,15 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/PanelAdminUsurio" element={<PanelAdminUsuario tipo="admin" />} />
-        <Route path="/PanelAdminUsuario" element={<PanelAdminUsuario tipo="usuario" />} />
+        <Route path="/PanelAdmin" element={<PanelAdminUsuario tipo="admin" />} />
+        <Route path="/PanelUsuario" element={<PanelAdminUsuario tipo="usuario" />} />
         <Route path="/Login_Admin" element={<Login_Admin />} />
         <Route path="/Login_Usuario" element={<Login_Usuario />} />
         <Route path="/Registro_Admin" element={<Registro_Admin />} />
         <Route path="/inicio_usuario" element={<InicioUsuario />} />
         <Route path="/inicio_admin" element={<InicioAdmin/>} />
+        <Route path="/Panel_Admin" element={<PanelAdminUsuario tipo="admin" />} />
+
       </Routes>
     </Router>
   );
