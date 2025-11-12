@@ -8,7 +8,6 @@ export default function RegistroAdmin() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  // Elimina caracteres especiales del correo
   const handleEmailChange = (e) => {
     const value = e.target.value.replace(/[^a-zA-Z0-9@.]/g, "");
     setEmail(value);
@@ -17,8 +16,7 @@ export default function RegistroAdmin() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Registro de administrador exitoso");
-    navigate("/PanelAdminUsuario");
-
+    navigate("/panel-admin-usuario");
   };
 
   return (

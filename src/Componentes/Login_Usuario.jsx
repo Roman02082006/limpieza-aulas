@@ -36,7 +36,6 @@ export default function LoginUsuario() {
           }}
         />
       ))}
-
       
       <form onSubmit={handleSubmit}>
         <h2>Iniciar Sesión</h2>

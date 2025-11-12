@@ -129,5 +129,4 @@ const PanelAdminUsuario = ({ tipo }) => {
     </div>
   );
 };
-
 export default PanelAdminUsuario;
