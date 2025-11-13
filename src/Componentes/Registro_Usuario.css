@@ -1,103 +1,112 @@
+/* Fondo general */
 .registro-container {
-  position: relative;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #042c4c, #0d4a5f, #2c8a78);
+  background: linear-gradient(135deg, #1e1e2f, #2b2d42);
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
-
-.particle {
+/* Burbujas animadas */
+.bubble {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.5);
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  animation: move 18s linear infinite, blink 3s ease-in-out infinite;
+  background-color: hsl(var(--hue, 200), 100%, 70%);
+  animation: float 10s linear infinite;
+  opacity: 0.5;
+  z-index: 1;
 }
 
-@keyframes move {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(100px, 50px); }
-  50% { transform: translate(-120px, 80px); }
-  75% { transform: translate(80px, -60px); }
-  100% { transform: translate(0, 0); }
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-100px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
-}
-
-
+/* Formulario */
 .registro-form {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
   padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   width: 320px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-  color: #fff;
+  color: white;
   text-align: center;
-  animation: fadeIn 0.8s ease forwards;
+  animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Título */
 .titulo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
+/* Inputs */
 .registro-form input {
   width: 100%;
-  padding: 0.8rem;
-  border-radius: 12px;
-  border: none;
-  outline: none;
+  padding: 10px;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  outline: none;
 }
 
 .registro-form input::placeholder {
-  color: #cde3f1;
+  color: rgba(255, 255, 255, 0.7);
 }
 
+/* Botones principales */
 .btn-principal {
   width: 100%;
-  padding: 0.8rem;
-  border-radius: 12px;
+  padding: 12px;
   border: none;
-  background: #2c8a78;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
   color: white;
-  font-weight: bold;
-  font-size: 1rem;
+  font-size: 15px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.3s;
 }
 
 .btn-principal:hover {
-  background: #3db596;
+  transform: scale(1.05);
 }
 
-
+/* Línea de separación */
 .linea-o {
   margin: 1rem 0;
-  color: #d0f1e7;
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Botones sociales */
@@ -113,38 +122,36 @@
   height: 40px;
   border-radius: 50%;
   border: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
   cursor: pointer;
   font-size: 18px;
-  color: #fff;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 }
 
 .social-buttons button:hover {
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.google { background: #db4437; }
-.facebook { background: #1877f2; }
-.instagram { background: #e4405f; }
-
+/* Botón volver */
 .btn-volver {
   width: 100%;
-  padding: 0.7rem;
+  padding: 10px;
   border: none;
-  border-radius: 12px;
-  background: #1a73e8;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
   color: white;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn-volver:hover {
-  background: #155bb5;
+  background: rgba(255, 255, 255, 0.3);
 }
 
-
+/* Mensaje */
 .mensaje {
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 500;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #4ade80;
 }

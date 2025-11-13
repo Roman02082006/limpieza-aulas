@@ -14,7 +14,7 @@ const InicioUsuario = () => {
         </h1>
 
         <div className="buttons">
-          <button className="btn login-btn" onClick={() => navigate("/Login_Usuario")}>
+          <button className="btn login-btn" onClick={() => navigate("/login_usuario")}>
             Login
           </button>
           <button

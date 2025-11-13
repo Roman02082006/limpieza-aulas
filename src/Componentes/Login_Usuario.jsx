@@ -16,7 +16,7 @@ export default function LoginUsuario() {
 
     if (email === mockUser.email && password === mockUser.password) {
       setMensaje("✅ Login exitoso, ¡bienvenido!");
-      setTimeout(() => navigate("/pagina_usuario"), 1000);
+      setTimeout(() => navigate("/Pagina_Usuario"), 1000);
     } else {
       setMensaje("❌ Usuario o contraseña incorrectos");
     }
@@ -59,7 +59,7 @@ export default function LoginUsuario() {
 
         <button type="submit">Entrar</button>
 
-        <button type="button" onClick={() => navigate("/registro-usuario")}>
+        <button type="button" onClick={() => navigate("/Registro_Usuario")}>
           Ir a Registro
         </button>
 

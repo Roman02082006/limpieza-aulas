@@ -6,10 +6,10 @@ import AltaPersonal from "./AltaPersonal";
 import ListadoPersonal from "./ListadoPersonal";
 import AltaHorario from "./AltaHorario";
 import ListadoHorarios from "./ListadoHorario";
-import "./PanelAdminUsuario.css";
 
+// ✅ Si quieres agregar navegación desde este panel hacia Login o Registro, ya está listo con useNavigate
 const PanelAdminUsuario = ({ tipo }) => {
-  const navigate = useNavigate(); // ✅ AHORA PODES NAVEGAR
+  const navigate = useNavigate(); // ✅ Navegación lista
 
   const roles = ["preceptores", "porteros", "admin", "regencia"];
 
@@ -90,10 +90,18 @@ const PanelAdminUsuario = ({ tipo }) => {
     <div className="panel-container">
       <h1 className="titulo">Gestión de Limpieza y Personal de Aulas</h1>
 
-      {/* ✅ BOTÓN PARA VOLVER */}
-      <button className="btn btn-volver" onClick={() => navigate("/")}>
-        Volver al Inicio
-      </button>
+      {/* ✅ BOTONES DE NAVEGACIÓN EXTRA */}
+      <div className="botones-navegacion">
+        <button className="btn btn-volver" onClick={() => navigate("/")}>
+          Volver al Inicio
+        </button>
+        <button className="btn btn-login" onClick={() => navigate("/Login_Usuario")}>
+          Ir a Login
+        </button>
+        <button className="btn btn-registro" onClick={() => navigate("/Registro_Usuario")}>
+          Ir a Registro
+        </button>
+      </div>
 
       {tipo === "admin" && (
         <>
