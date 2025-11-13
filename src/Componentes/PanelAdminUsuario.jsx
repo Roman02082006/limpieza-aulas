@@ -7,7 +7,6 @@ import AltaHorario from "./AltaHorario";
 import ListadoHorarios from "./ListadoHorario";
 import "./PanelAdminUsuario.css";
 
-
 const PanelAdminUsuario = ({ tipo }) => {
   const roles = ["preceptores", "porteros", "admin", "regencia"];
 
@@ -129,4 +128,5 @@ const PanelAdminUsuario = ({ tipo }) => {
     </div>
   );
 };
+
 export default PanelAdminUsuario;

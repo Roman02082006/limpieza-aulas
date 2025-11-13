@@ -23,9 +23,9 @@ export default function RegistroUsuario() {
 
   return (
     <div className="registro-container">
-      {/* Partículas decorativas */}
-      {[...Array(20)].map((_, i) => (
-        <span key={i} className="particle" />
+      {/* Fondo animado */}
+      {[...Array(15)].map((_, i) => (
+        <span key={i} className="bubble" />
       ))}
 
       <form onSubmit={handleSubmit} className="registro-form">
@@ -75,10 +75,10 @@ export default function RegistroUsuario() {
 
         <button
           type="button"
-          onClick={() => navigate("/login-usuario")}
+          onClick={() => navigate("/")}
           className="btn-volver"
         >
-          Volver al Login
+          Volver al Inicio
         </button>
 
         {mensaje && <p className="mensaje">{mensaje}</p>}
