@@ -9,6 +9,10 @@ import Login_Usuario from "./Componentes/Login_Usuario";
 import Registro_Admin from "./Componentes/Registro_Admin";
 import InicioUsuario from "./Componentes/inicio_usuario";
 import InicioAdmin from "./Componentes/inicio_admin";
+import RegistroUsuario from "./Componentes/Registro_Usuario";
+import PaginaUsuario from "./Componentes/Pagina_Usuario";
+
+
 
 // 🔹 CRUD y gestión
 import AltaAula from "./Componentes/AltaAula";
@@ -249,6 +253,9 @@ const App = () => {
       <Route path="/Registro_Admin" element={<Registro_Admin />} />
       <Route path="/inicio_usuario" element={<InicioUsuario />} />
       <Route path="/inicio_admin" element={<InicioAdmin />} />
+      <Route path="/Registro_Usuario" element={<RegistroUsuario />} />
+      <Route path="/Pagina_Usuario" element={<PaginaUsuario />} />
+
     </Routes>
   );
 };

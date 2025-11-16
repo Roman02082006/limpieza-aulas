@@ -15,7 +15,7 @@ export default function RegistroUsuario() {
 
     if (nombre && email && password) {
       setMensaje("✅ Registro exitoso, redirigiendo...");
-      setTimeout(() => navigate("/pagina_usuario"), 1000);
+      setTimeout(() => navigate("/Pagina_Usuario"), 1000);
     } else {
       setMensaje("❌ Completa todos los campos");
     }

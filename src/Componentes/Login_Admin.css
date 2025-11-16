@@ -1,28 +1,37 @@
-body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #d0e6f7, #b4d4f0);
+/* Contenedor global que centra todo */
+.page {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  background: linear-gradient(135deg, #d0e6f7, #b4d4f0);
+  font-family: "Poppins", sans-serif;
 }
 
+/* Caja del login */
 .container {
-  background: rgba(255, 255, 255, 0.9);
+  width: 360px;
+  background: rgba(255, 255, 255, 0.92);
   padding: 2rem;
   border-radius: 1.5rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(10px);
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.7s ease;
+
+  /* ✔ Centro perfecto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Animación */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -30,9 +39,10 @@ body {
   }
 }
 
+/* Títulos */
 h1 {
+  margin-top: 0;
   color: #1b4b8a;
-  margin-bottom: 0.5rem;
 }
 
 p {
@@ -40,32 +50,34 @@ p {
   margin-bottom: 1.5rem;
 }
 
+/* Inputs */
 form input {
   width: 100%;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
+  padding: 0.9rem;
+  border-radius: 10px;
   border: 1px solid #bcd4f3;
-  border-radius: 8px;
-  font-size: 1rem;
   background: #f9fcff;
-  transition: border 0.2s, box-shadow 0.2s;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  transition: box-shadow 0.2s, border 0.2s;
 }
 
 form input:focus {
-  outline: none;
   border: 1px solid #4a90e2;
-  box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.4);
+  outline: none;
 }
 
+/* Botón login */
 form button[type="submit"] {
   width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.8rem;
+  padding: 0.9rem;
   background: #4a90e2;
+  border: none;
+  border-radius: 10px;
   color: white;
   font-weight: bold;
-  border: none;
-  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -74,18 +86,21 @@ form button[type="submit"]:hover {
   background: #357abd;
 }
 
+/* Mensaje login */
 .mensaje-login {
   margin-top: 1rem;
   font-weight: bold;
   color: #1b4b8a;
 }
 
+/* Divider */
 .divider {
   margin: 1.2rem 0;
   color: #6c8ab7;
   font-size: 0.9rem;
 }
 
+/* Redes sociales */
 .social-buttons {
   display: flex;
   justify-content: center;
@@ -95,15 +110,15 @@ form button[type="submit"]:hover {
 .social-btn {
   width: 45px;
   height: 45px;
+  background: #eaf2fb;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
-  background: #eaf2fb;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  cursor: pointer;
   transition: transform 0.2s, background 0.2s;
-  font-size: 1.3rem;
 }
 
 .social-btn:hover {
@@ -128,15 +143,15 @@ form button[type="submit"]:hover {
   color: #6c8ab7;
 }
 
+/* Registrar */
 .registrar-btn {
+  margin-top: 1.2rem;
   background: none;
   border: none;
   color: #4a6fa5;
-  margin-top: 1rem;
-  cursor: pointer;
   font-size: 0.9rem;
-  text-decoration: none;
-  transition: color 0.2s, text-decoration 0.2s;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
 .registrar-btn:hover {
