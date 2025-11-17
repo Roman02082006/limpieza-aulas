@@ -1,47 +1,55 @@
 .registro-container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .registro-form {
-    display: inline-block;
-    text-align: left;
-    background: #f7f7f7;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .registro-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .registro-form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .registro-form button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .registro-form button:hover {
-    background: #45a049;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar vertical */
+  align-items: center;     /* Centrar horizontal */
+  height: 100vh;           /* Ocupar toda la pantalla */
+  text-align: center;
+  margin: 0; /* Eliminar márgenes que empujan el contenido */
+}
+
+.registro-form {
+  display: inline-block;
+  text-align: left;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.registro-container h2 {
+  margin-bottom: 20px; /* Separa el título para que quede más centrado */
+}
+
+.registro-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.registro-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.registro-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.registro-form button:hover {
+  background: #45a049;
+}
 
 .password-container {
   position: relative;
@@ -61,4 +69,3 @@
   user-select: none;
   font-size: 18px;
 }
-

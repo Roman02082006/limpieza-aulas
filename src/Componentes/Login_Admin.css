@@ -1,160 +1,193 @@
-/* Contenedor global que centra todo */
+/* --- Página general --- */
 .page {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #d0e6f7, #b4d4f0);
+  height: 100vh;
+  background: #eef2f3;
   font-family: "Poppins", sans-serif;
+  padding: 20px;
 }
 
-/* Caja del login */
+/* --- Contenedor principal --- */
 .container {
-  width: 360px;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 2rem;
-  border-radius: 1.5rem;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(10px);
-  animation: fadeIn 0.7s ease;
-
-  /* ✔ Centro perfecto */
+  background: #ffffff;
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible; /* evita cortes */
 }
 
-/* Animación */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* --- Títulos --- */
+.container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  color: #222;
+  text-align: center;
 }
 
-/* Títulos */
-h1 {
-  margin-top: 0;
-  color: #1b4b8a;
+.container p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 35px;
 }
 
-p {
-  color: #4a6fa5;
-  margin-bottom: 1.5rem;
+/* --- Formulario centrado --- */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
 }
 
-/* Inputs */
+/* --- Inputs --- */
 form input {
   width: 100%;
-  padding: 0.9rem;
+  padding: 14px;
+  margin-bottom: 16px;
+  border: 2px solid #d3d3d3;
   border-radius: 10px;
-  border: 1px solid #bcd4f3;
-  background: #f9fcff;
-  margin-bottom: 0.8rem;
   font-size: 1rem;
-  transition: box-shadow 0.2s, border 0.2s;
+  color: #222;               /* LETRAS VISIBLES */
+  background: #fafafa;       /* contraste suave */
+  transition: all 0.3s ease;
+}
+
+form input::placeholder {
+  color: #888;               /* placeholder más visible */
 }
 
 form input:focus {
-  border: 1px solid #4a90e2;
-  box-shadow: 0 0 8px rgba(74, 144, 226, 0.4);
+  border-color: #4e8cff;
+  background: white;
+  box-shadow: 0 0 6px rgba(78, 140, 255, 0.3);
   outline: none;
+  color: #000;               /* letras fuertes en focus */
 }
 
-/* Botón login */
+/* --- Botón iniciar sesión --- */
 form button[type="submit"] {
-  width: 100%;
-  padding: 0.9rem;
-  background: #4a90e2;
+  padding: 14px;
+  background: #4e8cff;
+  color: white;
+  font-size: 1.05rem;
   border: none;
   border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 form button[type="submit"]:hover {
-  background: #357abd;
+  background: #3a73d9;
 }
 
-/* Mensaje login */
+/* --- Mensaje login --- */
 .mensaje-login {
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #1b4b8a;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
 }
 
-/* Divider */
+/* --- Divisor --- */
 .divider {
-  margin: 1.2rem 0;
-  color: #6c8ab7;
+  margin: 25px 0 15px;
   font-size: 0.9rem;
+  color: #777;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 
-/* Redes sociales */
+.divider:before,
+.divider:after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background: #ccc;
+  position: absolute;
+  top: 50%;
+}
+
+.divider:before {
+  left: 0;
+}
+
+.divider:after {
+  right: 0;
+}
+
+/* --- Botones sociales --- */
 .social-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .social-btn {
-  width: 45px;
-  height: 45px;
-  background: #eaf2fb;
+  width: 48px;
+  height: 48px;
   border: none;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
+  background: #f2f2f2;
+  font-size: 1.3rem;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
 }
 
 .social-btn:hover {
-  transform: scale(1.1);
-  background: #dce9fa;
+  background: #e7e7e7;
+  transform: translateY(-3px);
 }
 
-.google {
-  color: #db4437;
-}
+.social-btn.google { color: #ea4335; }
+.social-btn.facebook { color: #1877f2; }
+.social-btn.x { color: #000; }
 
-.facebook {
-  color: #1877f2;
-}
-
-.x {
-  color: #000;
-}
-
-.loading-icons {
-  font-size: 1.5rem;
-  color: #6c8ab7;
-}
-
-/* Registrar */
+/* --- Botón registrar (SIEMPRE visible) --- */
 .registrar-btn {
-  margin-top: 1.2rem;
+  margin-top: 10px !important;
   background: none;
   border: none;
-  color: #4a6fa5;
-  font-size: 0.9rem;
+  color: #0066ff !important;     /* color más visible */
+  font-weight: 600;
   cursor: pointer;
-  transition: color 0.2s;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-align: center;
+  display: block;
 }
 
 .registrar-btn:hover {
-  color: #1b4b8a;
-  text-decoration: underline;
+  color: #003fbb;
+}
+
+/* --- Loader de iconos --- */
+.loading-icons {
+  font-size: 1.5rem;
+  color: #999;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+  }
 }

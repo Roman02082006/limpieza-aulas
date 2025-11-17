@@ -40,6 +40,7 @@ export default function Login_Admin() {
         <h1>Bienvenido</h1>
         <p>Iniciá sesión para mantener tu aula limpia y ordenada</p>
 
+        {/* FORMULARIO CENTRADO */}
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -62,6 +63,7 @@ export default function Login_Admin() {
 
         {mensaje && <p className="mensaje-login">{mensaje}</p>}
 
+        {/* DIVISOR SOCIAL */}
         <div className="divider">o continuá con</div>
 
         <div className="social-buttons">
@@ -82,6 +84,7 @@ export default function Login_Admin() {
           )}
         </div>
 
+        {/* BOTÓN REGISTRO (YA VISIBLE) */}
         <button
           type="button"
           className="registrar-btn"
