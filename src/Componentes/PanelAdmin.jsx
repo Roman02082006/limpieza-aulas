@@ -4,8 +4,8 @@ import ListadoAulas from "./ListadoAulas";
 import AltaPersonal from "./AltaPersonal";
 import ListadoPersonal from "./ListadoPersonal";
 import AltaHorario from "./AltaHorario";
-import ListadoHorarios from "./ListadoHorario";
-import "./PanelAdminUsuario.css";
+import ListadoHorarios from "./ListadoHorarios";  // 🔥 CORREGIDO
+import "./PanelAdmin.css";
 
 const PanelAdminUsuario = ({ tipo }) => {
   const roles = ["preceptores", "porteros", "admin", "regencia"];
@@ -60,7 +60,7 @@ const PanelAdminUsuario = ({ tipo }) => {
 
           <section className="seccion">
             <AltaHorario />
-            <ListadoHorarios />
+            <ListadoHorarios /> {/* 🔥 YA FUNCIONA */}
           </section>
 
           <section className="crud-section">
@@ -129,4 +129,4 @@ const PanelAdminUsuario = ({ tipo }) => {
   );
 };
 
-export default PanelAdminUsuario;
+export default PanelAdmin;

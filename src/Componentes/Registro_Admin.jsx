@@ -16,13 +16,15 @@ export default function RegistroAdmin() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Registro de administrador exitoso");
-    navigate("/panel-admin-usuario");
+
+    navigate("/Panel_Admin"); // 🔥 CORREGIDO (coincide con tu Router)
   };
 
   return (
     <div className="registro-container">
       <h2>Registro Administrador</h2>
       <form onSubmit={handleSubmit} className="registro-form">
+        
         <label htmlFor="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required />
 
@@ -51,7 +53,6 @@ export default function RegistroAdmin() {
           <span
             className="toggle-password"
             onClick={() => setShowPassword(!showPassword)}
-            title={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
           >
             {showPassword ? "🙈" : "👁️"}
           </span>
